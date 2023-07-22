@@ -51,7 +51,7 @@ body {
   stroke-dasharray: 700;
   stroke-dashoffset: 245;
   filter: url(#inset-shadow);
-  opacity: 0.7;
+  opacity: 0.4;
 }
 .card .avatar .avatar-img {
   width: 13rem;
@@ -68,9 +68,9 @@ body {
   -o-object-fit: contain;
      object-fit: contain;
   position: absolute;
-  top: 5px;
+  top: 50%;
   left: 50%;
-  translate: -50% 0;
+  translate: -50% -50%;
 }
 .card .info {
   width: 70%;

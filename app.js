@@ -7,7 +7,7 @@ const pokemons = [
     attack: "35",
     defence: "40",
     speed: "20",
-    img: "assets/img/Bulbasour.png",
+    img: "assets/img/Bulbasour-1.png",
     color: "126, 216, 118",
   },
   {
@@ -18,7 +18,7 @@ const pokemons = [
     attack: "20",
     defence: "35",
     speed: "25",
-    img: "assets/img/Squirlte.png",
+    img: "assets/img/Squirlte-1.png",
     color: "99, 219, 243",
   },
   {
