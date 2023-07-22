@@ -1,0 +1,102 @@
+const pokemons = [
+  {
+    id: 1,
+    name: "Bulbasour",
+    genre: "Grass",
+    hp: "20",
+    attack: "35",
+    defence: "40",
+    speed: "20",
+    img: "assets/img/Bulbasour.png",
+    color: "126, 216, 118",
+  },
+  {
+    id: 2,
+    name: "Squirlte",
+    genre: "Water",
+    hp: "30",
+    attack: "20",
+    defence: "35",
+    speed: "25",
+    img: "assets/img/Squirlte.png",
+    color: "99, 219, 243",
+  },
+  {
+    id: 3,
+    name: "Charmander",
+    genre: "Fire",
+    hp: "20",
+    attack: "15",
+    defence: "25",
+    speed: "10",
+    img: "assets/img/Charmander-1.png",
+    color: "243, 118, 0",
+  },
+  {
+    id: 4,
+    name: "Pikachu",
+    genre: "Electric",
+    hp: "30",
+    attack: "40",
+    defence: "25",
+    speed: "20",
+    img: "assets/img/Pikachu-1.png",
+    color: "255, 213, 6",
+  },
+];
+
+const body = document.body;
+body.innerHTML = pokemons
+  .map((pokemon) => {
+    return `<div class="card">
+        <div class="avatar">
+            <div class="experience">
+                <svg>
+                    <filter id='inset-shadow'>
+                        <feOffset dx='1' dy='1' />
+                        <feGaussianBlur stdDeviation='1.5' result='offset-blur' />
+                        <feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse' />
+                        <feFlood flood-color='black' flood-opacity='.95' result='color' />
+                        <feComposite operator='in' in='color' in2='inverse' result='shadow' />
+                        <feComposite operator='over' in='shadow' in2='SourceGraphic' />
+                    </filter>
+                    <circle cx="104" cy="104" r="90" style="stroke:rgb(${pokemon.color})"></circle>
+                </svg>
+            </div>
+            <div class="avatar-img">
+                <img src="${pokemon.img}" alt="">
+            </div>
+        </div>
+        <div class="info">
+            <h3 class="name">${pokemon.name}</h3>
+            <span class="proffession">${pokemon.genre}</span>
+        </div>
+        <div class="abilities">
+            <div class="ability">
+                <h5 class="ability-name">HP</h5>
+                <div class="bar">
+                    <div class="bar-fill bar-fill-hp" style="width:${pokemon.hp}%; background-color:rgba(${pokemon.color});"></div>
+                </div>
+            </div>
+            <div class="ability">
+                <h5 class="ability-name">Attack</h5>
+                <div class="bar">
+                    <div class="bar-fill bar-fill-attack" style="width:${pokemon.attack}%; background-color:rgba(${pokemon.color});"></div>
+                </div>
+            </div>
+            <div class="ability">
+                <h5 class="ability-name">Defence</h5>
+                <div class="bar">
+                    <div class="bar-fill bar-fill-defence" style="width:${pokemon.defence}%; background-color:rgba(${pokemon.color});"></div>
+                </div>
+            </div>
+            <div class="ability">
+                <h5 class="ability-name">Speed</h5>
+                <div class="bar">
+                    <div class="bar-fill bar-fill-speed" style="width:${pokemon.speed}%; background-color:rgba(${pokemon.color});"></div>
+                </div>
+            </div>
+        </div>
+    </div>`;
+  })
+  .join("");
