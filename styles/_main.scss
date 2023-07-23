@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
-/* html{
+/* html {
     font-size: 1vw;
-}
- */
+} */
 
 body {
     height: 100vh;
@@ -14,18 +13,17 @@ body {
     align-items: center;
 }
 
-$card-width: 24.5rem;
-$card-height: 33rem;
+$card-width: 14.75rem;
+$card-height: 31rem;
 $avatar-width: 13rem;
 $avatar-height: 13rem;
 $avatar-box-shadow:
     10px 10px 30px rgba(174, 174, 192, 0.4),
     -10px -10px 20px #ffffff;
-$experience-width: 15rem;
-$experience-height: 15rem;
+$experience-width: 13rem;
+$experience-height: 13rem;
 
 .card {
-    width: $card-width;
     height: $card-height;
     padding: 2rem;
     border-radius: 2rem;
@@ -33,9 +31,10 @@ $experience-height: 15rem;
         8px 8px 20px rgba(174, 174, 192, 0.25),
         -8px -8px 20px #ffffff;
     display: grid;
-    grid-template-rows: 15rem 6rem auto;
+    grid-template-rows: 13rem 16rem;
+    grid-template-columns: $card-width;
     justify-items: center;
-    margin: 0 2.5rem;
+    margin: 0 2rem;
     & .avatar {
         width: $avatar-width;
         height: $avatar-height;
@@ -43,18 +42,18 @@ $experience-height: 15rem;
         box-shadow: $avatar-box-shadow;
         position: relative;
         & .experience {
-            width: inherit;
-            height: inherit;
+            width: $experience-width;
+            height: $experience-height;
             & svg {
-                height: $experience-width;
-                width: $experience-height;
+                width: $experience-width;
+                height: $experience-height;
                 fill: transparent;
                 stroke-width: 5%;
                 stroke-linecap: round;
-                stroke-dasharray: 700;
-                stroke-dashoffset: calc(700 - (700 * 65) / 100);
+                stroke-dasharray: 10;
                 filter: url(#inset-shadow);
-                opacity: 0.4;
+                opacity: 0.6;
+                rotate: -90deg;
             }
         }
         & .avatar-img {
@@ -77,8 +76,7 @@ $experience-height: 15rem;
         }
     }
     & .info {
-        width: 70%;
-        height: 3.75rem;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -88,18 +86,17 @@ $experience-height: 15rem;
             font-size: 30px;
             font-style: normal;
             font-weight: 700;
-            line-height: normal;
         }
         & .proffesion {
             text-align: center;
             font-size: 18px;
             font-style: normal;
             font-weight: 400;
-            line-height: normal;
         }
     }
     & .abilities {
-        width: 100%;
+        width: inherit;
+        margin-top: 1rem;
         & .ability {
             height: 2rem;
             display: flex;
